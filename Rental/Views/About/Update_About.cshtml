@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewBag.Title = "Update_About";
+    Layout = "~/Shared/_MyMaster.cshtml";
+}
+
+<div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+
+        <div class="">
+            <div class="page-header-title">
+                <h4 class="page-title">About</h4>
+
+            </div>
+        </div>
+
+        <div class="page-content-wrapper ">
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card">
+
+                            <div class="card-body">
+
+                                <h5 class="header-title m-t-0"><small class="text-primary"><b>Please Update About Information</b></small></h5>
+
+                                <h4 style="text-align:right"> <a href="/About/Show_About" class="btn btn-outline-info"><i class="fa fa-table"></i>View Company Information</a></h4>
+                                <hr />
+                                @{ foreach (System.Data.DataRow dr in  ViewBag.AboutRecord.Rows)
+                                    {
+                                        <form class="" method="post" autocomplete="off">
+
+                                            <div class="col-sm-12">
+                                                <div class="m-t-20">
+                                                    <div class="form-group">
+                                                        <label>About Title</label>
+                                                        <input type="text" value="@dr["ATitle"]" name="ATitle" class="form-control" style="border: 1px solid lightblue;border-radius:5px" />
+
+                                                    </div><br />
+                                                    <div class="form-group">
+                                                        <label>Description</label>
+                                                        <input type="text" name="ABody" value="@dr["ABody"]" class="form-control" style="border: 1px solid lightblue;border-radius:5px" />
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div><br />
+                                            <div>
+                                                <button type="submit" style="width:100%; font-size:16px;padding:10px;border-radius:10px" class="btn btn-primary waves-effect waves-light">
+                                                    <i class="fa fa-plus-circle"></i>
+                                                    Submit
+                                                </button>
+
+                                            </div>
+                                        </form>
+                                    }
+                                }
+                                <!-- end row -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- end row -->
+
+            </div><!-- container-fluid -->
+
+        </div> <!-- Page content Wrapper -->
+
+    </div> <!-- content -->
+</div>
+
+
+

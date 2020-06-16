@@ -1,0 +1,243 @@
+﻿
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@Page.Title</title>
+    @RenderSection("head", required: false)
+    <meta charset="utf-8" />
+    <title>Admin Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="Admin Dashboard" name="description" />
+    <meta content="ThemeDesign" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link rel="shortcut icon" href="~/Content/assets/images/favicon.ico">
+
+    <!--Morris Chart CSS -->
+    <link rel="stylesheet" href="~/Content/assets/plugins/morris/morris.css">
+
+    <link href="~/Content/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/assets/css/icons.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/assets/css/style.css" rel="stylesheet" type="text/css">
+    <!-- DataTables -->
+    <link href="~/Content/assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/datatables/fixedHeader.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/datatables/scroller.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="~/Content/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/assets/css/icons.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/assets/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body class="fixed-left">
+    <div id="wrapper">
+
+        <!-- Top Bar Start -->
+        <div class="topbar">
+            <!-- LOGO -->
+            <div class="topbar-left">
+                <div class="text-center">
+                    <a href="index.html" class="logo"><img src="~/Content/assets/images/logo-dark.png" alt="" height="24"></a>
+                    <a href="index.html" class="logo-sm"><img src="~/Content/assets/images/logo-sm.png" alt="" height="28"></a>
+                </div>
+            </div>
+            <!-- Button mobile view to collapse sidebar menu -->
+
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <ul class="list-inline menu-left mb-0">
+                        <li class="float-left">
+                            <button class="button-menu-mobile open-left waves-light waves-effect">
+                                <i class="mdi mdi-menu"></i>
+                            </button>
+                        </li>
+                        <li class="hide-phone app-search float-left">
+                            <form role="search" class="navbar-form">
+                                <input type="text" placeholder="Search..." class="form-control search-bar">
+                                <a href=""><i class="fa fa-search"></i></a>
+                            </form>
+                        </li>
+                    </ul>
+
+                    <ul class="nav navbar-right float-right list-inline">
+                        <li class="dropdown d-none d-sm-block">
+                            <a href="#" data-target="#" class="dropdown-toggle waves-effect waves-light notification-icon-box" data-toggle="dropdown" aria-expanded="true">
+                                <i class="fa fa-bell"></i> <span class="badge badge-xs badge-danger"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-lg">
+                                <li class="text-center notifi-title">Notification <span class="badge badge-xs badge-success">3</span></li>
+                                <li class="list-group">
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item mt-2">
+                                        <div class="notify-icon bg-success"><i class="mdi mdi-cart-outline"></i></div>
+                                        <p class="notify-details">Your order is placed<span class="text-muted">Dummy text of the printing and typesetting industry.</span></p>
+                                    </a>
+                                    <!-- item-->
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <div class="notify-icon bg-info"><i class="mdi mdi-glass-cocktail"></i></div>
+                                        <p class="notify-details">Your item is shipped<span class="text-muted">It is a long established fact that a reader will</span></p>
+                                    </a>
+
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item mb-2">
+                                        <div class="notify-icon bg-danger"><i class="mdi mdi-message-text-outline"></i></div>
+                                        <p class="notify-details">New Message received<span class="text-muted">You have 87 unread messages</span></p>
+                                    </a>
+
+                                    <!-- last list item -->
+                                    <a href="javascript:void(0);" class="list-group-item text-center">
+                                        <small class="text-primary mb-0">View all </small>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="d-none d-sm-block">
+                            <a href="#" id="btn-fullscreen" class="waves-effect waves-light notification-icon-box"><i class="fas fa-expand"></i></a>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="" class="dropdown-toggle profile waves-effect waves-light" data-toggle="dropdown" aria-expanded="true">
+                                <img src="~/Content/assets/images/users/avatar-1.jpg" alt="user-img" class="rounded-circle">
+                                <span class="profile-username">
+                                    @Session["Fname"].ToString() <span class="mdi mdi-chevron-down font-15"></span>
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="javascript:void(0)" class="dropdown-item"> Profile</a></li>
+                                <li><a href="javascript:void(0)" class="dropdown-item"><span class="badge badge-success float-right">5</span> Settings </a></li>
+                                <li><a href="javascript:void(0)" class="dropdown-item"> Lock screen</a></li>
+                                <li class="dropdown-divider"></li>
+                                <li><a href="~/Login/Index" class="dropdown-item"> Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- Top Bar End -->
+        <!-- ========== Left Sidebar Start ========== -->
+
+        <div class="left side-menu">
+            <div class="sidebar-inner slimscrollleft">
+
+                <div class="user-details">
+                    <div class="text-center">
+                        <img src="~/Content/assets/images/users/avatar-1.jpg" alt="" class="rounded-circle img-thumbnail">
+                    </div>
+                    <div class="user-info">
+                        <div class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">@Session["Fname"].ToString()&nbsp;@Session["Lname"].ToString()</a>
+                            <p style="color:blue;text-decoration:underline"> @Session["Email"].ToString()</p>
+                            <ul class="dropdown-menu">
+                                <li><a href="javascript:void(0)" class="dropdown-item"> Profile</a></li>
+                                <li><a href="javascript:void(0)" class="dropdown-item"><span class="badge badge-success float-right">5</span> Settings </a></li>
+                                <li><a href="javascript:void(0)" class="dropdown-item"> Lock screen</a></li>
+                                <li class="dropdown-divider"></li>
+                                <li><a href="" class="dropdown-item"> Logout</a></li>
+                            </ul>
+                        </div>
+
+                        <p class="text-muted m-0"><i class="far fa-dot-circle text-primary"></i> Online</p>
+                    </div>
+                </div>
+                <!--- Divider -->
+
+                <div id="sidebar-menu">
+                    <ul>
+                        <li class="menu-title">Main</li>
+
+                        <li>
+                            <a href="/Dashboard/Index" class="waves-effect"><i class="ti-home"></i><span> Dashboard <span class="badge badge-primary float-right">1</span></span></a>
+                        </li>
+
+                        <li>
+                            <a href="calendar.html" class="waves-effect"><i class="ti-calendar"></i><span> Calendar </span></a>
+                        </li>
+
+                        <li class="has_sub">
+                            <a href="javascript:void(0);" class="waves-effect"><i class="ti-layout"></i><span>Website</span><span class="float-right"><i class="mdi mdi-plus"></i></span></a>
+                            <ul class="list-unstyled">
+                                <li><a href="/CompanyInf/Add_Company">Company Information</a></li>
+                                <li><a href="/Masterhead/Add_Masterhead">MasterHead</a></li>
+                                <li><a href="/About/Add_About">About Company</a></li>
+                                <li><a href="layouts-menu2.html">Menu Style 2</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has_sub">
+                            <a href="javascript:void(0);" class="waves-effect"><i class="ti-files"></i><span> Pages </span><span class="float-right"><i class="mdi mdi-plus"></i></span></a>
+                            <ul class="list-unstyled">
+                             
+                                <li><a href="/CompanyInf/Add_Company">Timeline</a></li>
+                                <li><a href="pages-invoice.html">Invoice</a></li>
+                                <li><a href="pages-directory.html">Directory</a></li>
+                                <li><a href="pages-login.html">Login</a></li>
+                                <li><a href="pages-register.html">Register</a></li>
+                                <li><a href="pages-recoverpw.html">Recover Password</a></li>
+                                <li><a href="pages-lock-screen.html">Lock Screen</a></li>
+                                <li><a href="pages-blank.html">Blank Page</a></li>
+                                <li><a href="pages-404.html">Error 404</a></li>
+                                <li><a href="pages-500.html">Error 500</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <!-- end sidebarinner -->
+        </div>
+        <!-- Left Sidebar End -->
+        <!-- Start right Content here -->
+        <div>
+            @RenderBody()
+        </div>
+        <!-- End Right content here -->
+        <footer class="footer">
+            © 2020 Micropoint Ltd <span class="d-none d-md-inline-block"> - Crafted with <i class="mdi mdi-heart text-danger"></i> by Patrick Tonui.</span>
+        </footer>
+
+    </div>
+    <!-- END wrapper -->
+
+
+
+    <script src="~/Content/assets/js/jquery.min.js"></script>
+    <script src="~/Content/assets/js/popper.min.js"></script>
+    <script src="~/Content/assets/js/bootstrap.min.js"></script>
+    <script src="~/Content/assets/js/modernizr.min.js"></script>
+    <script src="~/Content/assets/js/detect.js"></script>
+    <script src="~/Content/assets/js/fastclick.js"></script>
+    <script src="~/Content/assets/js/jquery.slimscroll.js"></script>
+    <script src="~/Content/assets/js/jquery.blockUI.js"></script>
+    <script src="~/Content/assets/js/waves.js"></script>
+    <script src="~/Content/assets/js/wow.min.js"></script>
+    <script src="~/Content/assets/js/jquery.nicescroll.js"></script>
+    <script src="~/Content/assets/js/jquery.scrollTo.min.js"></script>
+
+    <!--Morris Chart-->
+    <script src="~/Content/assets/plugins/morris/morris.min.js"></script>
+    <script src="~/Content/assets/plugins/raphael/raphael.min.js"></script>
+
+    <!-- KNOB JS -->
+    <script src="~/Content/assets/plugins/jquery-knob/excanvas.js"></script>
+    <script src="~/Content/assets/plugins/jquery-knob/jquery.knob.js"></script>
+
+    <script src="~/Content/assets/plugins/flot-chart/jquery.flot.min.js"></script>
+    <script src="~/Content/assets/plugins/flot-chart/jquery.flot.tooltip.min.js"></script>
+    <script src="~/Content/assets/plugins/flot-chart/jquery.flot.resize.js"></script>
+    <script src="~/Content/assets/plugins/flot-chart/jquery.flot.pie.js"></script>
+    <script src="~/Content/assets/plugins/flot-chart/jquery.flot.selection.js"></script>
+    <script src="~/Content/assets/plugins/flot-chart/jquery.flot.stack.js"></script>
+    <script src="~/Content/assets/plugins/flot-chart/jquery.flot.crosshair.js"></script>
+
+    <script src="~/Content/assets/pages/dashboard.js"></script>
+
+    <script src="~/Content/assets/js/app.js"></script>
+
+   
+</body>
+</html>

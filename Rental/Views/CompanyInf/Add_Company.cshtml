@@ -1,0 +1,108 @@
+﻿
+@{
+    ViewBag.Title = "Company";
+    Layout = "~/Shared/_MyMaster.cshtml";
+}
+
+
+<div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+
+        <div class="">
+            <div class="page-header-title">
+                <h4 class="page-title">Company Information</h4>
+                
+            </div>
+        </div>
+
+        <div class="page-content-wrapper ">
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card">
+
+                            <div class="card-body">
+
+                                <h5 class="header-title m-t-0"><small class="text-primary"><b>Please Enter Company Information</b></small></h5>
+
+                                <h4 style="text-align:right"> <a href="/CompanyInf/ViewCompany" class="btn btn-outline-info"><i class="fa fa-table"></i>View Company Information</a></h4>
+                                <hr />
+                                <form class="" method="post" autocomplete="off">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="m-t-20">
+                                                <div class="form-group">
+                                                    <label>Company Name</label>
+                                                    <input type="text" name="CompanyName" class="form-control" style="border: 1px solid lightblue;border-radius:5px" />
+
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label>Phone</label>
+                                                    <input type="text" name="Phone" class="form-control" style="border: 1px solid lightblue;border-radius:5px" />
+
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Email</label>
+                                                    <input type="email" name="Email" parsley-type="email" class="form-control" style="border: 1px solid lightblue;border-radius:5px" />
+
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Facebook</label>
+                                                    <input type="text" name="FaceBook" class="form-control" style="border: 1px solid lightblue;border-radius:5px" />
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="m-t-20">
+
+                                                <div class="form-group">
+                                                    <label>Twitter</label>
+                                                    <input type="text" name="Twitter" class="form-control" style="border: 1px solid lightblue;border-radius:5px" />
+
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Whatsapp</label>
+                                                    <input type="text" name="Whatsapp" class="form-control" style="border: 1px solid lightblue;border-radius:5px" />
+
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Location</label>
+                                                    <textarea name="Location" class="form-control" rows="3" style="border: 1px solid lightblue;border-radius:5px"></textarea>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button type="submit" style="width:100%; font-size:16px;padding:10px" class="btn btn-info waves-effect waves-light"><i class="fa fa-plus-circle"></i>
+                                            Submit
+                                        </button>
+
+                                    </div>
+                                </form>
+                                <!-- end row -->
+                                @{
+                                    if (TempData["msg"] != null)
+                                    {
+                                        <script>alert( '@TempData["msg"]')</script>
+                                    }
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- end row -->
+
+            </div><!-- container-fluid -->
+
+        </div> <!-- Page content Wrapper -->
+
+    </div> <!-- content -->
+</div>
